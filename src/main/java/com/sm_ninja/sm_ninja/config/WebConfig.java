@@ -9,8 +9,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        System.out.println("Allowing requests from: http://localhost:3000, https://ninja-sm.vercel.app");
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000", "https://ninja-sm.vercel.app/")
+                .allowedOrigins("http://localhost:3000", "https://ninja-sm.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
